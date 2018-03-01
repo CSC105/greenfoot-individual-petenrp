@@ -38,7 +38,11 @@ public class Flamingo extends Actor
         if (getOneIntersectingObject(TRex.class) != null ||
         getOneIntersectingObject(Crystal.class) != null)
         {
-            displayGameOver();
+            //displayGameOver();
+            
+          if (getWorld() instanceof MyWorld) {
+              ((MyWorld) getWorld()).gameOver();
+            }
         }
 
     }

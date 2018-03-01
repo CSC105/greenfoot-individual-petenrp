@@ -36,15 +36,11 @@ public class DragonFire extends Actor
       if( getX() > 366 && getY() > 366 ){
         Actor player = getOneIntersectingObject( Flamingo.class );
         if(player != null && player.getY() > 372 && player.getX() - getX() < -2){
-          displayGameOver();
+          //displayGameOver();
+          if (getWorld() instanceof MyWorld) {
+              ((MyWorld) getWorld()).gameOver();
+            }
         }
       }
     }
-    
-    private void displayGameOver() {
-        GameOver gameOver = new GameOver();
-        getWorld().addObject(gameOver, getWorld().getWidth()/2, getWorld().getHeight()/2);
-        Greenfoot.stop();
-    }
-
 }

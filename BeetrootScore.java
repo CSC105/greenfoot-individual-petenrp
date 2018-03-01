@@ -8,16 +8,14 @@ import greenfoot.Font;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Score extends Actor
-{ 
-    public static int score = 0;
-    
-    public Score() {
-        GreenfootImage score = new GreenfootImage(120, 50); //frame size
-        setImage(score);
+public class BeetrootScore extends Actor
+{
+    public BeetrootScore() {
+        GreenfootImage beetrootScore = new GreenfootImage(90, 50); //frame size
+        setImage(beetrootScore);
     }
 
-    public void setScore(int score) {
+    public void setBeetrootScore(int score) {
         GreenfootImage score_ = getImage();
         score_.clear();
 
@@ -28,9 +26,14 @@ public class Score extends Actor
         score_.setColor(c);
         
         score_.fill();
-        score_.setColor(Color.PINK);
+        score_.setColor(Color.WHITE);
 
-        score_.drawString("" + score, 20, 35); //Draw text ("string", start point low left) 
+        score_.drawString("" + Beetroot.beetrootScore, 20, 35); //Draw text ("string", start point low left) 
         setImage(score_);
     } 
+    
+    public void act() {
+        setBeetrootScore(Beetroot.beetrootScore);
+    }
+    
 }
