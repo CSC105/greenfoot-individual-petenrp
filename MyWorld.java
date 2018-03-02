@@ -15,7 +15,10 @@ public class MyWorld extends World
     Score scoreObj = null;
     private int timeCounter = 0;
     BeetrootScore beetrootscoreObj = null;
-
+    private int Xacis = 0;
+    
+    public static GreenfootSound galaxy = new GreenfootSound ("Galaxy.mp3");
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -38,7 +41,7 @@ public class MyWorld extends World
 
         Dragon dragon = new Dragon();
         addObject (dragon, 30, 120);
-        
+
         BeetrootP beetrootp = new BeetrootP();
         addObject (beetrootp, 730, 22);
 
@@ -46,11 +49,10 @@ public class MyWorld extends World
         scoreObj = new Score();
         addObject(scoreObj, 825, 45);
         scoreObj.setScore(0);
-        
+
         beetrootscoreObj = new BeetrootScore();
         addObject(beetrootscoreObj, 715, 45);
         beetrootscoreObj.setBeetrootScore(0);
-        
 
         Background world = new Background();
         Background world2 = new Background();
@@ -64,9 +66,9 @@ public class MyWorld extends World
         Crystal();
         Beetroot();
         Score();
-
+        Sound();
     }
-    
+
     public void Score() {
         if (timeCounter % 5 == 0) {
             score++;
@@ -77,7 +79,7 @@ public class MyWorld extends World
 
     public void TRex() {
         tRexCounter++;
-        if (tRexCounter == 710) {
+        if (tRexCounter == 430) {
             TRex tRex = new TRex();
             addObject(tRex, getWidth(), 418);
             tRexCounter = 0;
@@ -101,15 +103,19 @@ public class MyWorld extends World
     }
 
     public void Crystal() {
-        if(Greenfoot.getRandomNumber(250)<1) {
+        if(Greenfoot.getRandomNumber(200)<1) {
             Crystal crystal = new Crystal();
-            addObject(crystal, Greenfoot.getRandomNumber(300) + 300, 0);
+            addObject(crystal, Greenfoot.getRandomNumber(600) + 300, 0);
         }
-        //System.out.println(Greenfoot.getRandomNumber(300) + 300);
+        System.out.println(Greenfoot.getRandomNumber(300) + 300);
     }
-    
+
     public void gameOver() {
         int totalScore = score + (Beetroot.beetrootScore*50);
         Greenfoot.setWorld(new EndGame(totalScore));
+    }
+
+    public void Sound() {
+        galaxy.play();
     }
 }

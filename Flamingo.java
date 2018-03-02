@@ -7,7 +7,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 
-
 public class Flamingo extends Actor
 {
     private int groundLevel = 420;
@@ -32,19 +31,18 @@ public class Flamingo extends Actor
         animateF();
         controlKey();
         onGround();
+
     }
 
     public void gameOver() {
         if (getOneIntersectingObject(TRex.class) != null ||
         getOneIntersectingObject(Crystal.class) != null)
         {
-            //displayGameOver();
-            
-          if (getWorld() instanceof MyWorld) {
-              ((MyWorld) getWorld()).gameOver();
+            if (getWorld() instanceof MyWorld) {
+                ((MyWorld) getWorld()).gameOver();
             }
         }
-
+        //MyWorld.galaxy.stop();
     }
 
     private void displayGameOver() {
@@ -153,4 +151,5 @@ public class Flamingo extends Actor
         jumpSpeed = -20; // add jump speed
         setLocation(getX(), getY() + jumpSpeed); // leave ground
     }
+
 }
