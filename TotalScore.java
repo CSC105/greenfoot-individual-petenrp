@@ -38,6 +38,6 @@ public class TotalScore extends Actor
         score_.drawString("" + score, 10, 85); //Draw text ("string", start point low left) 
         setImage(score_);
         
-        System.out.println(score);
+        //System.out.println(score);
     } 
 }
