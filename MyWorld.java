@@ -102,11 +102,11 @@ public class MyWorld extends World
     }
 
     public void Crystal() {
-        if(Greenfoot.getRandomNumber(250)<1) {
+        if(Greenfoot.getRandomNumber(300)<1) {
             Crystal crystal = new Crystal();
             addObject(crystal, Greenfoot.getRandomNumber(300) + 300, 0);
         }
-        if(Greenfoot.getRandomNumber(250)<1) {
+        if(Greenfoot.getRandomNumber(300)<1) {
             Crystal crystal = new Crystal();
             addObject(crystal, Greenfoot.getRandomNumber(300) + 600, 0);
         }

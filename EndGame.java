@@ -25,7 +25,7 @@ public class EndGame extends World
         super(900, 506, 1, false); 
         
         totalscoreObj = new TotalScore(score);
-        addObject (totalscoreObj, 450, 260);
+        addObject (totalscoreObj, 488, 250);
 
         setPaintOrder (GameOver.class, TryAgain.class, TotalScore.class, Menu.class);
 
