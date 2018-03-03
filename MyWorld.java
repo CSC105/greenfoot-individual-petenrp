@@ -15,7 +15,6 @@ public class MyWorld extends World
     Score scoreObj = null;
     private int timeCounter = 0;
     BeetrootScore beetrootscoreObj = null;
-    private int Xacis = 0;
     
     public static GreenfootSound galaxy = new GreenfootSound ("Galaxy.mp3");
     

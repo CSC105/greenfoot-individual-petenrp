@@ -11,8 +11,6 @@ import greenfoot.Font;
 
 public class TotalScore extends Actor
 {
-    //public static int totalscore = Score. + (beetrootScore*5);
-
     int score = 0;
     
     public TotalScore(int score) {

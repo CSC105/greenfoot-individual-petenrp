@@ -23,6 +23,9 @@ public class EndGame extends World
     public EndGame(int score) {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 506, 1, false); 
+        
+        totalscoreObj = new TotalScore(score);
+        addObject (totalscoreObj, 450, 260);
 
         setPaintOrder (GameOver.class, TryAgain.class, TotalScore.class, Menu.class);
 
@@ -34,9 +37,6 @@ public class EndGame extends World
 
         Menu menu = new Menu();
         addObject (menu, 830, 420);
-
-        totalscoreObj = new TotalScore(score);
-        addObject (totalscoreObj, 450, 260);
 
         EndGameBackground world1 = new EndGameBackground();
         EndGameBackground world2 = new EndGameBackground();
